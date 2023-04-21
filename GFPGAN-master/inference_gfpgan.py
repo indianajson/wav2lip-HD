@@ -23,7 +23,7 @@ def main():
     parser.add_argument('-o', '--output', type=str, default='results', help='Output folder. Default: results')
     # we use version to select models, which is more user-friendly
     parser.add_argument(
-        '-v', '--version', type=str, default='1.3', help='GFPGAN model version. Option: 1 | 1.2 | 1.3. Default: 1.3')
+        '-v', '--version', type=str, default='1.4', help='GFPGAN model version. Option: 1 | 1.2 | 1.3. | 1.4  Default: 1.4')
     parser.add_argument(
         '-s', '--upscale', type=int, default=2, help='The final upsampling scale of the image. Default: 2')
 
@@ -92,6 +92,10 @@ def main():
         arch = 'clean'
         channel_multiplier = 2
         model_name = 'GFPGANv1.3'
+    elif args.version == '1.4':
+        arch = 'clean'
+        channel_multiplier = 2
+        model_name = 'GFPGANv1.4'
     else:
         raise ValueError(f'Wrong model version {args.version}.')
 
